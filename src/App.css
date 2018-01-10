@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+
+body {
+ background: url("wallpaper.jpg") no-repeat center center fixed;
+ background-size: cover;
+}
+
+Button {
+  transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+}
+.App {
+  text-align: center;
+  position: absolute;
+  top: 8%;
+  width: 100%;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.listGroup {
+    width: 60%;
+    margin: 10px auto;
+    display: block;
+    text-align: left;
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+}
+
+.inProgressSpan {
+    font-size: 10px;
+}
+
+.fa-check-square-o,.fa-spinner,.fa-spin {
+    margin-right: 10px;
+}
+
+.listItem {
+    margin: 5px auto;
+}
+
+.listItemBtn {
+    float: right !important;
+    padding: 2px 5px !important;
+    margin-left:3px !important;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.buttonAdd {
+    background: #302428 !important;
+    color:#fff !important;
+    border:none !important;
+    width: 50px !important;
+    font-size:20px !important;
+}
+
+.clockStyle {
+    background: #eeeeee;
+    border-radius: 10px;
+    /*border: 1px solid #000;*/
+    width: 270px;
+    display: inline-block;
+    font-size:5em;
+    font-family: 'Pacifico', cursive;
+    color:#672C1C;
+    font-weight: bold;
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+}
+
+
+.buttonAdd:hover {
+    background: #F2B599 !important;
+    color:#672C1C;
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+}
+
+.ControlLabel {
+    font-size:3em;
+    opacity: 0.6;
+    /*!**!text-shadow: 4px 0 8px #672C1C;*/
+    text-shadow: -1px 0 4px #672C1C, 0 1px 4px #672C1C, 1px 0 4px #672C1C, 0 -1px 4px  #672C1C;
+    font-family: 'Raleway', sans-serif;
+    color:#fff;
+
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
