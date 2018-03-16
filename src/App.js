@@ -15,7 +15,8 @@ class App extends Component {
         this.state = {
             tasks: JSON.parse(localStorage.getItem('tasks')) || [],
             addInputValue: '',
-            onEditTaskId:null
+            onEditTaskId:null,
+            onEditTaskValue: ''
         }
 
         this.onAddInputHandlerChange = this.onAddInputHandlerChange.bind(this);
@@ -61,8 +62,11 @@ class App extends Component {
         })
     }
 
-    editTask() {
-
+    editTask(id) {
+        this.setState({
+            onEditTaskValue:this.state.tasks.find(task=>task.id===id).title,
+            onEditTaskId:this.state.onEditTaskId !==id ? id:null
+        })
     }
 
     onTaskClickHandler(_id) {
@@ -75,11 +79,41 @@ class App extends Component {
             }
             return task;
         });
-        this.setState({tasks});
+        this.setState({tasks: JSON.parse(localStorage.getItem('tasks'))});
     }
 
+    onSaveEdit=()=> {
+
+        let{tasks,onEditTaskId,onEditTaskValue} =this.state;
+        tasks.map(task=> {
+            if(task.id===onEditTaskId) {
+                if(onEditTaskValue) {
+                    task.title=onEditTaskValue;
+                    localStorage.setItem('tasks', JSON.stringify(tasks));
+                    return task;
+                } else {
+                    alert("task can't be empty");
+                }
+            }
+            return task;
+        })
+        this.setState({
+            onEditTaskValue: '',
+            onEditTaskId:null,
+            tasks: JSON.parse(localStorage.getItem('tasks'))
+        })
+
+    }
+
+    editTaskChange=(e)=> {
+        this.setState({
+            onEditTaskValue: e.target.value
+        })
+    }
+
+
     render() {
-        const {addInputValue, tasks} = this.state;
+        const {addInputValue, tasks, onEditTaskId,onEditTaskValue} = this.state;
         return (
             <div className="App">
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css"/>
@@ -87,7 +121,15 @@ class App extends Component {
                     <AddNewTask addInputValue={addInputValue}
                                 addNewTask={this.addNewTask}
                                 onAddInputHandlerChange={this.onAddInputHandlerChange}/>
-                    <TaskList tasks={tasks} onTaskClickHandler={this.onTaskClickHandler} deleteTask={this.deleteTask}/>
+                    <TaskList tasks={tasks}
+                              onTaskClickHandler={this.onTaskClickHandler}
+                              deleteTask={this.deleteTask}
+                              onEditTaskId={onEditTaskId}
+                              editTask={this.editTask}
+                              onEditTaskValue={onEditTaskValue}
+                              editTaskChange={this.editTaskChange}
+                              onSaveEdit={this.onSaveEdit}
+                    />
                 </Grid>
             </div>
         );

@@ -105,6 +105,22 @@ Button {
     margin: 0 auto!important;
 }
 
+#editTask {
+    display: inline !important;
+    width: 60% !important;
+    padding: .085rem .75rem !important;
+}
+
+.form-edit {
+    display: inline !important;
+    width: 60% !important;
+}
+
+.buttonEditSave {
+    padding: .155rem .75rem !important;
+    margin-left:10px !important;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

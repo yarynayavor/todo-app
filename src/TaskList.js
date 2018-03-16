@@ -1,35 +1,17 @@
 import React from 'react';
+import ListItem from './ListItem';
 import {
-    Button,
     Row,
     Col,
     ListGroup,
-    ListGroupItem} from 'react-bootstrap';
+ } from 'react-bootstrap';
 
-
-        const TaskList=({tasks,onTaskClickHandler,deleteTask,editTask})=> {
-
+        const TaskList=(props)=> {
             return (
                 <Row className="show-grid">
                         <Col sm={12} md={12} >
                             <ListGroup className={"listGroup"}>
-                                {tasks.map( (task,index)=>
-                                    <ListGroupItem  className={"listItem"} key={index} bsStyle={`${task.isDone? 'success':'warning'}`}>
-                                            {task.isDone? <i className="fa fa-check-square-o" aria-hidden="true"></i> : <i className="fa fa-spinner fa-spin" aria-hidden="true"></i>}
-
-                                            {task.title}
-
-                                            <Button onClick={ ()=>  deleteTask(task.id)} bsStyle="danger" className={"listItemBtn deleteBtn"} >
-                                                <i className="fa fa-trash" aria-hidden="true"></i>
-                                            </Button>
-                                            <Button bsStyle="info" className={"listItemBtn editBtn"} disabled={task.isDone}>
-                                                <i className="fa fa-pencil" aria-hidden="true"></i>
-                                            </Button>
-                                            <Button  onClick={  ()=> onTaskClickHandler(task.id)} bsStyle="success" className={"listItemBtn doneBtn"} disabled={task.isDone}>
-                                                <i className="fa fa-check" aria-hidden="true"></i>
-                                            </Button>
-
-                                        </ListGroupItem>)}
+                                {props.tasks.map( (task,index)=> <ListItem task={task} index={index} {...props}/>)}
                             </ListGroup>
                         </Col>
                     </Row>

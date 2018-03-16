@@ -22,6 +22,7 @@ const AddNewTask=({addInputValue,addNewTask,onAddInputHandlerChange})=> {
                                     <ControlLabel className="ControlLabel">{'What is your main focus for today?  '}</ControlLabel>
                                     <FormControl
                                         type="text"
+                                        maxLength={50}
                                         value={addInputValue}
                                         placeholder="enter your task here..."
                                         onChange={onAddInputHandlerChange}
