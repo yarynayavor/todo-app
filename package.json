@@ -2,21 +2,25 @@
   "name": "todo-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://yarynayavor.github.io/todo-app/",
   "dependencies": {
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-scripts": "0.9.5",
     "@fortawesome/fontawesome": "^1.1.1",
     "@fortawesome/react-fontawesome": "0.0.17",
     "font-awesome": "^4.7.0",
+    "gh-pages": "^1.1.0",
+    "react": "^16.2.0",
     "react-bootstrap": "^0.32.0",
+    "react-dom": "^16.2.0",
     "react-fontawesome": "^1.6.1",
-    "react-live-clock": "^2.0.2"
+    "react-live-clock": "^2.0.2",
+    "react-scripts": "0.9.5"
   },
   "devDependencies": {},
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "predeploy":"npm run build",
+    "deploy":"gh-pages -d build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
