@@ -13,8 +13,8 @@ const AddNewTask=({addInputValue,addNewTask,onAddInputHandlerChange})=> {
     return (
         <div>
                     <Row className="show-grid">
-                        <Col xs={10} md={10}>
-                            <Col smOffset={2} sm={10}>
+                        <Col xs={12} md={12}>
+                            <Col smOffset={2} sm={10} md={10} className={"mainPage"}>
                                 <Clock className={"clockStyle"} format={'HH:mm:ss'} ticking={true} timezone={'Europe/Kiev'} />
                                 <FormGroup
                                     controlId="addNewTask"

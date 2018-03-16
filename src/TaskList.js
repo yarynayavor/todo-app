@@ -7,11 +7,11 @@ import {
     ListGroupItem} from 'react-bootstrap';
 
 
-        const TaskList=({tasks,onTaskClickHandler,deleteTask})=> {
+        const TaskList=({tasks,onTaskClickHandler,deleteTask,editTask})=> {
 
             return (
                 <Row className="show-grid">
-                        <Col xs={12} md={12}>
+                        <Col sm={12} md={12} >
                             <ListGroup className={"listGroup"}>
                                 {tasks.map( (task,index)=>
                                     <ListGroupItem  className={"listItem"} key={index} bsStyle={`${task.isDone? 'success':'warning'}`}>

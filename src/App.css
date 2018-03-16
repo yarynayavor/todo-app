@@ -47,7 +47,8 @@ Button {
 }
 
 .listItem {
-    margin: 5px auto;
+    margin: 5px 0;
+    padding: .45rem 1.25rem !important;
 }
 
 .listItemBtn {
@@ -97,7 +98,11 @@ Button {
     text-shadow: -1px 0 4px #672C1C, 0 1px 4px #672C1C, 1px 0 4px #672C1C, 0 -1px 4px  #672C1C;
     font-family: 'Raleway', sans-serif;
     color:#fff;
+}
 
+.mainPage {
+    text-align: center!important;
+    margin: 0 auto!important;
 }
 
 @keyframes App-logo-spin {

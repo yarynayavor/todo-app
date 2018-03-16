@@ -14,12 +14,14 @@ class App extends Component {
     componentWillMount() {
         this.state = {
             tasks: JSON.parse(localStorage.getItem('tasks')) || [],
-            addInputValue: ''
+            addInputValue: '',
+            onEditTaskId:null
         }
 
         this.onAddInputHandlerChange = this.onAddInputHandlerChange.bind(this);
         this.addNewTask = this.addNewTask.bind(this);
         this.deleteTask = this.deleteTask.bind(this);
+        this.editTask = this.editTask.bind(this);
         this.onTaskClickHandler = this.onTaskClickHandler.bind(this);
 
     }
@@ -43,7 +45,6 @@ class App extends Component {
             alert("write something");
         }
 
-
         this.setState({
             tasks: JSON.parse(localStorage.getItem('tasks')),
             addInputValue: ''
@@ -60,10 +61,9 @@ class App extends Component {
         })
     }
 
-    //
-    // editTask() {
-    //
-    // }
+    editTask() {
+
+    }
 
     onTaskClickHandler(_id) {
         let {tasks} = this.state;
